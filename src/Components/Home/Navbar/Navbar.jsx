@@ -59,7 +59,7 @@ const Navbar = () => {
                         <NavLink to='/reviewForm'> <li>Rate Us</li></NavLink>
                     </ul>
                 </div>
-                <a className="font-semibold text-lg flex  items-center gap-1"><GiHummingbird className='text-green-500 md:h-8 md:w-8' /> Freelance Task Marketplace</a>
+                <a className="font-semibold text-lg flex  items-center gap-1"><GiHummingbird className='text-green-500 md:h-8 md:w-8' />Lost and Found Website</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-5">
