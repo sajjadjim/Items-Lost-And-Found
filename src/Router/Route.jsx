@@ -14,6 +14,7 @@ import ErroPage from "../Error Page/ErroPage";
 import User_info from "../Components/Log in User Info/User_info";
 import UpdateItems from "../Components/Log in User Info/UpdateItems";
 import DetailsItems from "../Components/All Items List View/DetailsItems";
+import RecoverItems from "../Components/Log in User Info/RecoverItems";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
         path:'/detailsItem/:id',
         loader: ({ params }) => fetch(`http://localhost:3000/itemsAll/${params.id}`), 
         element:<PrivateRoute><DetailsItems></DetailsItems></PrivateRoute>
+      },
+      {
+        path:'/recoverIems',
+        Component:RecoverItems
       }
     ]
   },

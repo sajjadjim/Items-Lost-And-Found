@@ -30,6 +30,8 @@ const Single_item = ({ item }) => {
         data.userEmail = user.email;
         data.location = e.target.location?.value || location;
         data.date = new Date().toISOString().split('T')[0];
+        data.title = title;
+        data.thumbnail = thumbnail;
 
         axios.post('http://localhost:3000/recoverItems', data)
             .then(res => {

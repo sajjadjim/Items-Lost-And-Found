@@ -118,7 +118,7 @@ const Navbar = () => {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             <li><Link to='/addItems'>Add Lost & Found Item</Link></li>
-                            <li><Link to='/userInfo'>All Recovered Items </Link></li>
+                            <li><Link to='/recoverIems'>My Recovered Items </Link></li>
                             <li><Link to='/myItems'>My Items</Link></li>
                              <li><Link to='/userInfo'>Setting</Link></li>
                             <li>{
