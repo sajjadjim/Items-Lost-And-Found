@@ -120,6 +120,7 @@ const Navbar = () => {
                             <li><Link to='/userInfo'>Add Lost & Found Item</Link></li>
                             <li><Link to='/userInfo'>All Recovered Items </Link></li>
                             <li><Link to='/myItems'>My Items</Link></li>
+                             <li><Link to='/userInfo'>Setting</Link></li>
                             <li>{
                                 user ? <Link onClick={handleLogOut} className='' to='/login'><button className=""> Logout</button></Link> :
                                     <Link className='' to='/login'><button className=""> Login</button></Link>

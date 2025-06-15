@@ -10,6 +10,8 @@ import PrivateRoute from "../Authcontext/Privateroute";
 import Add_item from "../Components/Add Lost and Found Items/Add_item";
 import AllItemsView from "../Components/All Items List View/AllItemsView";
 import CurrentUser_Myitems from "../Components/Log in User Info/CurrentUser_Myitems";
+import ErroPage from "../Error Page/ErroPage";
+import User_info from "../Components/Log in User Info/User_info";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,14 @@ const router = createBrowserRouter([
       {
         path:'/myItems',
         element:<PrivateRoute><CurrentUser_Myitems></CurrentUser_Myitems></PrivateRoute>
+      },
+      {
+        path: '/*',
+        Component:ErroPage
+      },
+      {
+        path:'/userInfo',
+        element:<PrivateRoute><User_info></User_info></PrivateRoute>
       }
     ]
   },

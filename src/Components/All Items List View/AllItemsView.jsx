@@ -32,7 +32,6 @@ const AllItemsView = () => {
     }
 
 
-
     // Filter items by title or location
     const filteredItems = items.filter(item =>
         item.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
