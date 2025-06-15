@@ -25,7 +25,7 @@ const UpdateItems = () => {
         // Include dynamic user info in task data
         updateItem.displayName = user.displayName;
         updateItem.email = user.email;
-        console.log(updateItem);
+        // console.log(updateItem);
         //    Here the Data send to the Data Base Code 
         axios.put(`http://localhost:3000/itemsAll/${_id}`, updateItem)
             .then((response) => {
