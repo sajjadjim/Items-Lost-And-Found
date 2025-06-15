@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Single_item = ({ item }) => {
-    const { email, postType , thumbnail , description , date , location , category} = item;
+    const { email, postType , thumbnail , description , date , location , category , _id} = item;
     // console.log(email)
 
     return (
@@ -47,7 +48,9 @@ const Single_item = ({ item }) => {
                         <div className="badge badge-outline">{postType}</div>
                     </div>
                 </div>
+                <div className='grid justify-items-center my-5'><Link to={`/detailsItem/${_id}`} className='btn btn-secondary'>View Details</Link></div>
             </div>
+            
         </div>
     );
 };
