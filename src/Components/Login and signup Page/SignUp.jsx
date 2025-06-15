@@ -33,7 +33,7 @@ const SignUp = () => {
 
 
     // Optional: Send taskData to your backend
-    fetch('https://frelancer-server.vercel.app/users', {
+    fetch('http://localhost:3000/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

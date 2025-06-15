@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import { Link } from 'react-router';
 import Carousel from './Components/Carousel';
+import Data_Show_Home_Page from './Components/Data_Show_Home_Page';
 
 const Home = () => {
     useEffect(() => {
@@ -41,6 +42,10 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            {/* show 6 data in the home page */}
+             <div className='w-10/12 mx-auto '>
+                <Data_Show_Home_Page></Data_Show_Home_Page>
+             </div>
         </div>
     );
 };
