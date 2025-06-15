@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div>
             <Carousel></Carousel>
-                        <div className="hero bg-base-200 min-h-screen">
+            <div className="hero bg-base-200 min-h-screen">
                 <div className="hero-content flex-col lg:flex-row">
                     <img
                         src="https://media.istockphoto.com/id/1213495447/photo/work-from-home-people-making-video-conference-with-colleague-via-laptop-computer-during-home.webp?a=1&b=1&s=612x612&w=0&k=20&c=AkBkOdBRbwyDhmdl83WIbLwJC_620uCZU9A1syeTWRk="
@@ -18,12 +18,12 @@ const Home = () => {
                     />
                     <div>
 
-                        <h1 className="md:text-5xl font-bold">Freelancer Task <span style={{ fontWeight: 'bold', marginTop: '50px', textAlign: 'center' }}>
+                        <h1 className="md:text-5xl font-bold">Lost and Found Website <span style={{ fontWeight: 'bold', marginTop: '50px', textAlign: 'center' }}>
                             <span>
                                 {' '}
                                 <span style={{ color: 'blue' }}>
                                     <Typewriter
-                                        words={['AddTask', 'Update Task', 'Creator']}
+                                        words={['Add Items', 'Views Items', 'Update Items', 'Find / Help Others']}
                                         loop={0} // 0 = infinite loop
                                         cursor
                                         cursorStyle='|'

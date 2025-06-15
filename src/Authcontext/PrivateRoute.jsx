@@ -4,7 +4,7 @@ import { AuthContext_File } from './AuthProvider'
 function PrivateRoute({ children }) {
 
     const { user , loading } = use(AuthContext_File)
-     console.log(loading)
+    //  console.log(loading)
     if(loading){
         return <div>Loading...</div>
     }
