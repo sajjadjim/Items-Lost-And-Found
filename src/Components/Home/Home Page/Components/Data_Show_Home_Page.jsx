@@ -12,14 +12,17 @@ const Data_Show_Home_Page = () => {
                 // Sort by date descending (most recent first)
                 const sorted = data.sort((a, b) => new Date(b.date) - new Date(a.date));
                 setItems(sorted.slice(0, 6));
-                console.log(data)
+                // console.log(data)
             });
     }, []);
+    // const reversedItems = [...items].reverse();
+    // console.log(reversedItems);
+    // // setItems(reversedItems);
     return (
         <div className="max-w-5xl mx-auto px-4 md:mt-10">
             <h2 className="text-2xl font-bold mb-6 text-center">Latest 6 Items</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {items.map((item) => (
+                {[...items].reverse().map((item) => (
                     <div
                         key={item._id}
                         className="bg-white rounded-lg shadow p-4 flex flex-col items-center border border-gray-200"

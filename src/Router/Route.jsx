@@ -12,6 +12,7 @@ import AllItemsView from "../Components/All Items List View/AllItemsView";
 import CurrentUser_Myitems from "../Components/Log in User Info/CurrentUser_Myitems";
 import ErroPage from "../Error Page/ErroPage";
 import User_info from "../Components/Log in User Info/User_info";
+import UpdateItems from "../Components/Log in User Info/UpdateItems";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
       {
         path:'/userInfo',
         element:<PrivateRoute><User_info></User_info></PrivateRoute>
+      },
+      {
+        path:'/updateItems/:id',
+        loader: ({ params }) => fetch(`http://localhost:3000/itemsAll/${params.id}`),
+        element:<PrivateRoute><UpdateItems></UpdateItems></PrivateRoute>
       }
     ]
   },
