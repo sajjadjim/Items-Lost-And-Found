@@ -7,7 +7,7 @@ const User_info = () => {
 
     React.useEffect(() => {
         if (!user?.email) return;
-        fetch(`http://localhost:3000/users?email=${encodeURIComponent(user.email)}`)
+        fetch(`https://b11a11-server-side-sajjadjim.vercel.app/users?email=${encodeURIComponent(user.email)}`)
             .then(res => res.json())
             .then(data => {
                 if (Array.isArray(data) && data.length > 0) {
