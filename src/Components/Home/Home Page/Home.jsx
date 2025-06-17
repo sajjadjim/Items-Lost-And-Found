@@ -3,6 +3,7 @@ import { Typewriter } from 'react-simple-typewriter';
 import { Link } from 'react-router';
 import Carousel from './Components/Carousel';
 import Data_Show_Home_Page from './Components/Data_Show_Home_Page';
+import NumberofUserWebsite from './Components/NumberofUserWebsite';
 
 const Home = () => {
     useEffect(() => {
@@ -48,6 +49,10 @@ const Home = () => {
             <div className="w-full max-w-6xl mx-auto my-8">
                 <Data_Show_Home_Page />
             </div>
+
+           <div>
+             <NumberofUserWebsite></NumberofUserWebsite>
+           </div>
         </div>
     );
 };
