@@ -1,11 +1,12 @@
 import React, { Suspense, use } from 'react';
 import { AuthContext_File } from '../../Authcontext/AuthProvider';
 import MyItems from './MyItems';
-import { myPostedItemsPriomise } from '../../Api Loading Data/MyItemsAll'
+import { myPostedItemsPromise } from '../../Api Loading Data/MyItemsAll'
 
 const CurrentUser_Myitems = () => {
 
     const { user } = use(AuthContext_File)
+    console.log("My access token" , user.accessToken)
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '60vh', justifyContent: 'center' }}>
@@ -36,7 +37,7 @@ const CurrentUser_Myitems = () => {
                         </div>
                     }
                 >
-                    <MyItems myPostedItemsPriomise={myPostedItemsPriomise(user.email)} />
+                    <MyItems myPostedItemsPriomise={myPostedItemsPromise(user.email , user.accessToken)} />
                 </Suspense>
             </div>
         </div>

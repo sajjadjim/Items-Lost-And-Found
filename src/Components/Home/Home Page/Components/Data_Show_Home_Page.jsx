@@ -36,16 +36,14 @@ const Data_Show_Home_Page = () => {
                         <p className="text-sm mb-1">
                             <span className="font-medium">Type:</span> {item.postType}
                         </p>
-                        <p className="text-sm mb-1">
+                        {/* <p className="text-sm mb-1">
                             <span className="font-medium">Category:</span> {item.category}
-                        </p>
-                        <p className="text-sm mb-1">
-                            <span className="font-medium">Location:</span> {item.location}
-                        </p>
+                        </p> */}
+                       
                         <p className="text-sm mb-1">
                             <span className="font-medium">Date:</span> {item.date}
                         </p>
-                        <p className="text-sm mb-2">{item.description}</p>
+                        {/* <p className="text-sm mb-2">{item.description}</p> */}
                         <p className="text-xs text-gray-500">
                             <span className="font-medium">Posted by:</span> {item.displayName || item.email}
                         </p>

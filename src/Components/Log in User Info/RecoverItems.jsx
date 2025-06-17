@@ -27,7 +27,13 @@ const RecoverItems = () => {
     useEffect(() => {
         setLoading(true);
         if (user?.email) {
-            fetch(`https://b11a11-server-side-sajjadjim.vercel.app/recoverItems?email=${user.email}`)
+            fetch(`https://b11a11-server-side-sajjadjim.vercel.app/recoverItems?email=${user.email}`,{
+                 
+                    headers : {
+                    authorization : `Bearer ${user.accessToken}`
+                    }
+                
+            })
                 .then(res => res.json())
                 .then(data => {
                     setItems(data);
