@@ -52,11 +52,11 @@ const Navbar = () => {
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-3">
                         <NavLink to='/'><li>Home</li></NavLink>
-                        <NavLink to='/addItems'><li>Add Task</li></NavLink>
-                        <NavLink to='/browseTask'><li>Browse Tasks</li></NavLink>
-                        <NavLink to='/myPostedTask'><li>My Posted Tasks</li></NavLink>
-                        <NavLink to='/about'> <li>About Us</li></NavLink>
-                        <NavLink to='/reviewForm'> <li>Rate Us</li></NavLink>
+                        <NavLink to='/addItems'><li>Add Lost & Found</li></NavLink>
+                        <NavLink to='/postItems'><li>Post items</li></NavLink>
+                        <NavLink to='/FaQ'> <li>FaQ</li></NavLink>
+                        <NavLink to='/aboutUs'> <li>About Us</li></NavLink>
+                        <NavLink to='/contact'><li>Contact</li></NavLink>
                     </ul>
                 </div>
                 <a className="font-semibold text-lg flex  items-center gap-1"><GiHummingbird className='text-green-500 md:h-8 md:w-8' />Lost and Found Website</a>
@@ -66,9 +66,9 @@ const Navbar = () => {
                     <NavLink to='/'><li>Home</li></NavLink>
                     <NavLink to='/addItems'><li>Add Lost & Found</li></NavLink>
                     <NavLink to='/postItems'><li>Post items</li></NavLink>
-                    {/* <NavLink to='/myPostedTask'><li>My Posted Tasks</li></NavLink>
-                    <NavLink to='/about'> <li>About Us</li></NavLink>
-                    <NavLink to='/reviewForm'> <li>Rate Us</li></NavLink> */}
+                    <NavLink to='/FaQ'> <li>FaQ</li></NavLink>
+                    <NavLink to='/aboutUs'> <li>About Us</li></NavLink>
+                    <NavLink to='/contact'><li>Contact</li></NavLink>
                 </ul>
             </div>
             <div className="navbar-end">
@@ -120,7 +120,7 @@ const Navbar = () => {
                             <li><Link to='/addItems'>Add Lost & Found Item</Link></li>
                             <li><Link to='/recoverIems'>My Recovered Items </Link></li>
                             <li><Link to='/myItems'>My Items</Link></li>
-                             <li><Link to='/userInfo'>Setting</Link></li>
+                            <li><Link to='/userInfo'>Setting</Link></li>
                             <li>{
                                 user ? <Link onClick={handleLogOut} className='' to='/login'><button className=""> Logout</button></Link> :
                                     <Link className='' to='/login'><button className=""> Login</button></Link>

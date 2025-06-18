@@ -4,7 +4,10 @@ import { Link } from 'react-router';
 import Carousel from './Components/Carousel';
 import Data_Show_Home_Page from './Components/Data_Show_Home_Page';
 import StatsCounter from './Components/StatsCounter';
-
+import AnimatedSection from './Components/AnimatedSection';
+import { motion } from 'framer-motion';
+import LostFoundFeatures from './Components/LostFoundFeatures';
+import AboutUs from '../../About us/AboutUs';
 
 const Home = () => {
     useEffect(() => {
@@ -15,7 +18,12 @@ const Home = () => {
             <div className="w-full max-w-6xl">
                 <Carousel />
             </div>
-            <div className="hero bg-base-200 min-h-screen w-full flex justify-center">
+            <motion.div className="hero bg-base-200 min-h-screen w-full flex justify-center"
+            initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+      viewport={{ once: true }}
+            >
                 <div className="hero-content flex-col lg:flex-row items-center w-full max-w-6xl">
                     <img
                         src="https://www.247software.com/hubfs/lost-and-found-software.png"
@@ -45,7 +53,7 @@ const Home = () => {
                         <button className="btn btn-primary px-8 py-3 rounded-full shadow-lg">Get Started</button>
                     </div>
                 </div>
-            </div>
+            </motion.div>
             {/* show 6 data in the home page */}
             <div className="w-full max-w-6xl mx-auto my-8">
                 <Data_Show_Home_Page />
@@ -54,6 +62,13 @@ const Home = () => {
            <div>
              <StatsCounter></StatsCounter>
            </div>
+           <div>
+            <AnimatedSection></AnimatedSection>
+           </div>
+           <div>
+            <LostFoundFeatures></LostFoundFeatures>
+           </div>
+           
         </div>
     );
 };

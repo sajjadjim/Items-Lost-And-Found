@@ -1,4 +1,4 @@
-import React, { use, useEffect } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import Lottie from 'lottie-react';
 import { FcGoogle } from "react-icons/fc";
@@ -11,7 +11,7 @@ const Login = () => {
   useEffect(() => {
     document.title = 'Login|Page'
   })
-
+  const [error, setError] = useState('')
   const { signIn, signInWithGoogle } = use(AuthContext_File)
   const location = useLocation()
   // console.log(location)
@@ -26,10 +26,14 @@ const Login = () => {
     signIn(email, password)
       .then(() => {
         navigate(`${location.state ? location.state : '/'}`)
+        toast("Successfully Log in Done ✅");
       }).catch((error) => {
-        alert(error.message)
+        // alert(error.message)
+        const errorCode = error.code
+        setError(errorCode)
+        toast.error("Log in failed ❌");
       })
-    toast("Successfully Log in Done ✅");
+
   }
   // --------------------------------------------------------
   // sign in with google here part code ----------------------
@@ -39,7 +43,7 @@ const Login = () => {
         // The signed-in user info.
         const user = result.user;
         console.log('Google User:', user);
-         navigate(`${location.state ? location.state : '/'}`)
+        navigate(`${location.state ? location.state : '/'}`)
         toast.success("Signed in with Google ✅");
       })
       .catch((error) => {
@@ -80,6 +84,7 @@ const Login = () => {
             <div className="text-right text-sm text-black hover:underline">
               <a href="#">Forgot password?</a>
             </div>
+            {error && <p className='text-red-600'>{error}</p>}
             <button
               type="submit"
               className="w-full bg-blue-500 text-white py-2 rounded-xl hover:bg-blue-600 transition"

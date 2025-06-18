@@ -15,6 +15,9 @@ import User_info from "../Components/Log in User Info/User_info";
 import UpdateItems from "../Components/Log in User Info/UpdateItems";
 import DetailsItems from "../Components/All Items List View/DetailsItems";
 import RecoverItems from "../Components/Log in User Info/RecoverItems";
+import ContactPage from "../Components/Contact/ContactPage";
+import FaQ from "../Components/SomeFrequentyQuestion/FaQ";
+import AboutUs from "../Components/About us/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -65,7 +68,19 @@ const router = createBrowserRouter([
       },
       {
         path:'/recoverIems',
-        Component:RecoverItems
+        element:<PrivateRoute><RecoverItems></RecoverItems></PrivateRoute>
+      },
+      {
+        path:'/contact',
+        Component:ContactPage
+      },
+      {
+        path:'/FaQ',
+        Component: FaQ
+      },
+      {
+        path:'/aboutUs',
+        Component: AboutUs
       }
     ]
   },

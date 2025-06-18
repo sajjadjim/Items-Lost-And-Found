@@ -6,7 +6,7 @@ import { myPostedItemsPromise } from '../../Api Loading Data/MyItemsAll'
 const CurrentUser_Myitems = () => {
 
     const { user } = use(AuthContext_File)
-    console.log("My access token" , user.accessToken)
+    // console.log("My access token" , user.accessToken)
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '60vh', justifyContent: 'center' }}>

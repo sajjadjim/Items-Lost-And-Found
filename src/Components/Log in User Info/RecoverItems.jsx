@@ -3,6 +3,9 @@ import { AuthContext_File } from '../../Authcontext/AuthProvider';
 import { useEffect, useState } from 'react';
 import Recover_Single_Item from './Recover_Single_Item';
 // import { data } from 'react-router';
+import { FaTableList } from "react-icons/fa6";
+import { CiCreditCard1 } from "react-icons/ci";
+
 
 const RecoverItems = () => {
     const { user } = use(AuthContext_File)
@@ -27,12 +30,12 @@ const RecoverItems = () => {
     useEffect(() => {
         setLoading(true);
         if (user?.email) {
-            fetch(`http://localhost:3000/recoverItems?email=${user.email}`,{
-                 
-                    headers : {
-                    authorization : `Bearer ${user.accessToken}`
-                    }
-                
+            fetch(`http://localhost:3000/recoverItems?email=${user.email}`, {
+
+                headers: {
+                    authorization: `Bearer ${user.accessToken}`
+                }
+
             })
                 .then(res => res.json())
                 .then(data => {
@@ -69,18 +72,18 @@ const RecoverItems = () => {
 
     return (
         <div>
-            <div className="mb-4 flex gap-2">
+            <div className="my-4 flex md:gap-20 gap-2   justify-center">
                 <button
-                    className={`px-4 py-2 rounded ${viewMode === 'card' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+                    className={`px-4 py-2 rounded flex cursor-pointer  items-center gap-1 ${viewMode === 'card' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
                     onClick={() => handleViewMode('card')}
                 >
-                    Card View
+                    Card View <FaTableList></FaTableList>
                 </button>
                 <button
-                    className={`px-4 py-2 rounded ${viewMode === 'table' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+                    className={`px-4 py-2 rounded flex cursor-pointer items-center gap-1 ${viewMode === 'table' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
                     onClick={() => handleViewMode('table')}
                 >
-                    Table View
+                    Table View <CiCreditCard1></CiCreditCard1>
                 </button>
             </div>
             {viewMode === 'card' ? (

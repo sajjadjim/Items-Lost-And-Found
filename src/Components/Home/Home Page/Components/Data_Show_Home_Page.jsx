@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import { Link } from 'react-router';
-
+import { motion } from 'framer-motion';
 const Data_Show_Home_Page = () => {
     const [items, setItems] = useState([]);
 
@@ -21,7 +21,12 @@ const Data_Show_Home_Page = () => {
     return (
         <div className="max-w-5xl mx-auto px-4 md:mt-10">
             <h2 className="text-2xl font-bold mb-6 text-center">Latest 6 Items</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                viewport={{ once: true }}
+            >
                 {[...items].reverse().map((item) => (
                     <div
                         key={item._id}
@@ -39,7 +44,7 @@ const Data_Show_Home_Page = () => {
                         {/* <p className="text-sm mb-1">
                             <span className="font-medium">Category:</span> {item.category}
                         </p> */}
-                       
+
                         <p className="text-sm mb-1">
                             <span className="font-medium">Date:</span> {item.date}
                         </p>
@@ -49,7 +54,7 @@ const Data_Show_Home_Page = () => {
                         </p>
                     </div>
                 ))}
-            </div>
+            </motion.div>
             <div className='grid  justify-items-center'> <Link className='btn btn-primary my-5' to={'/postItems'}>Show more</Link></div>
         </div>
     );

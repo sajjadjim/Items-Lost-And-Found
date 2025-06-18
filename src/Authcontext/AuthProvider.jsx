@@ -44,7 +44,7 @@ const AuthProvider = ({ children }) => {
             unsubscribe();
         };
     }, []);
-    console.log(loading)
+    // console.log(loading)
     
 
     // create here a custome auth Data for useing everywhere 
@@ -58,8 +58,8 @@ const AuthProvider = ({ children }) => {
         loading,
     };
 
-    // User show the current user 
-    console.log(user)
+    // User show the current user print here  
+    // console.log(user)
 
     return <AuthContext_File value={AuthData}>
         {children}
