@@ -9,7 +9,7 @@ import { AuthContext_File } from '../../../Authcontext/AuthProvider';
 const Navbar = () => {
     const [dbUser, setDbUser] = useState([])
     const { user, logOut } = use(AuthContext_File)
-  
+
     const handleLogOut = () => {
         logOut().then(() => {
         }).catch((error) => {
@@ -23,24 +23,27 @@ const Navbar = () => {
         const accessToken = user?.accessToken;
         if (accessToken) {
             fetch('https://b11a11-server-side-sajjadjim.vercel.app/users',
-            {
-                headers: {
-                authorization: `Bearer ${accessToken}`
+                {
+                    headers: {
+                        authorization: `Bearer ${accessToken}`
+                    }
                 }
-            }
             )
-            .then(res => res.json())
-            .then(data => {
-                setDbUser(data);
-            })
-            .catch(error => {
-                console.error('Error fetching users:', error);
-            });
+                .then(res => res.json())
+                .then(data => {
+                    setDbUser(data);
+                    // console.log(data)
+                })
+                .catch(error => {
+                    console.error('Error fetching users:', error);
+                });
         }
     }, []);
 
+    
     const currentUser = dbUser.filter(db => db.email === user?.email)
-
+    // const displayName =  dbUser.name 
+    // console.log(dbUser)
 
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -74,7 +77,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 {/* Theme control part work here  */}
-               
+
                 <div className="relative group">
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
