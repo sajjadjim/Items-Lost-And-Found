@@ -10,7 +10,7 @@ const AllItemsView = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:3000/itemsAll')
+        fetch('https://b11a11-server-side-sajjadjim.vercel.app/itemsAll')
             .then(res => res.json())
             .then(data => {
                 setAllItems(data);

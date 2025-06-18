@@ -1,10 +1,64 @@
 import React, { use } from 'react';
 import Single_item from '../All Items List View/Single_item';
-
+import { Link } from 'react-router';
+import Swal from 'sweetalert2';
+import noData from '../../../public/noFounfItems.json'
+import Lottie from 'lottie-react';
 
 const MyItems = ({ myPostedItemsPriomise }) => {
     const items = use(myPostedItemsPriomise);
     // console.log(items)
+
+    // delete item Here by usinng ID parameter use 
+    const handleDeleteItem = async (id) => {
+        const result = await Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        });
+
+        if (result.isConfirmed) {
+            try {
+                const res = await fetch(`https://b11a11-server-side-sajjadjim.vercel.app/itemsAll/${id}`, {
+                    method: "DELETE",
+                });
+                if (res.ok) {
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your item has been deleted.",
+                        icon: "success"
+                    });
+                    window.location.reload();
+                } else {
+                    Swal.fire({
+                        title: "Error!",
+                        text: "Failed to delete the item.",
+                        icon: "error"
+                    });
+                }
+            } catch (error) {
+                Swal.fire({
+                    title: "Error!",
+                    text: "Something went wrong.",
+                    icon: "error"
+                });
+                alert(error.message);
+            }
+        }
+    };
+
+    if (!items || items.length === 0) {
+        return (
+            <div className="text-center mt-10 text-lg grid justify-center font-semibold text-gray-500">
+                No items found. You not yet added any data to the database.
+                <Lottie className='w-100' animationData={noData} loop={true}></Lottie>
+            </div>
+        );
+    }
 
     return (
         <div>
@@ -44,8 +98,8 @@ const MyItems = ({ myPostedItemsPriomise }) => {
                                 <td>{item.location}</td>
                                 <td>{item.date}</td>
                                 <td>
-                                    <button className="btn btn-primary btn-xs mr-2">Update</button>
-                                    <button className="btn btn-error btn-xs">Delete</button>
+                                    <Link to={`/updateItems/${item._id}`} className="btn btn-primary btn-xs mr-2">Update</Link>
+                                    <button onClick={() => handleDeleteItem(item._id)} className="btn btn-error btn-xs">Delete</button>
                                 </td>
                             </tr>
                         ))}
