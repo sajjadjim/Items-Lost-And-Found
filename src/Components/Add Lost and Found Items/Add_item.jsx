@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import axios from 'axios';
 
 const Add_item = () => {
+    const [dbUser, setDbUser] = React.useState(null);
     const { user } = use(AuthContext_File)
     // console.log("User name " , user)
     useEffect(() => {
@@ -21,8 +22,8 @@ const Add_item = () => {
         // Include dynamic user info in task data
         taskData.displayName = user.displayName;
         taskData.email = user.email;
-        console.log(taskData);
-        //    Here the Data send to the Data Base Code 
+        // console.log(taskData);
+
         axios.post('https://b11a11-server-side-sajjadjim.vercel.app/itemsAll', taskData)
             .then((response) => {
                 if (response.data.insertedId) {
@@ -54,6 +55,25 @@ const Add_item = () => {
         form.reset();
     };
 
+        React.useEffect(() => {
+            if (!user?.email) return;
+            const accessToken = user?.accessToken;
+            fetch(`https://b11a11-server-side-sajjadjim.vercel.app/users?email=${encodeURIComponent(user.email)}` ,{
+                headers: {
+                authorization: `Bearer ${accessToken}`
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (Array.isArray(data) && data.length > 0) {
+                        setDbUser(data[0]);
+                    }
+                })
+                .catch(() => {});
+        }, [user?.email]);
+        const displayUserName =dbUser?.name || user?.displayName;
+
+        console.log(displayUserName)
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-pink-100 py-10">
             <form onSubmit={handleAddNewItem} className="w-full max-w-4xl mx-auto p-8 bg-white/90 rounded-2xl shadow-2xl border border-blue-200 space-y-6 backdrop-blur">
@@ -99,7 +119,7 @@ const Add_item = () => {
                     </div>
                     <div>
                         <label className="block mb-1 font-semibold text-blue-700">Your Name</label>
-                        <input type="text" name="displayName" className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 bg-gray-100" defaultValue={user.displayName} readOnly />
+                        <input type="text" name="displayName" className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 bg-gray-100" defaultValue={displayUserName} readOnly  />
                     </div>
                     <div>
                         <label className="block mb-1 font-semibold text-blue-700">Your Email</label>

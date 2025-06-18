@@ -2,7 +2,8 @@ import React, { use } from 'react';
 import Single_item from '../All Items List View/Single_item';
 import { Link } from 'react-router';
 import Swal from 'sweetalert2';
-
+import noData from '../../../public/noFounfItems.json'
+import Lottie from 'lottie-react';
 
 const MyItems = ({ myPostedItemsPriomise }) => {
     const items = use(myPostedItemsPriomise);
@@ -49,6 +50,15 @@ const MyItems = ({ myPostedItemsPriomise }) => {
             }
         }
     };
+
+    if (!items || items.length === 0) {
+        return (
+            <div className="text-center mt-10 text-lg grid justify-center font-semibold text-gray-500">
+                No items found. You not yet added any data to the database.
+                <Lottie className='w-100' animationData={noData} loop={true}></Lottie>
+            </div>
+        );
+    }
 
     return (
         <div>

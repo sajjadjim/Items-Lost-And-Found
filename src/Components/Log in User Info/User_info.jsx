@@ -7,7 +7,13 @@ const User_info = () => {
 
     React.useEffect(() => {
         if (!user?.email) return;
-        fetch(`https://b11a11-server-side-sajjadjim.vercel.app/users?email=${encodeURIComponent(user.email)}`)
+        const accessToken = user?.accessToken;
+        fetch(`https://b11a11-server-side-sajjadjim.vercel.app/users?email=${encodeURIComponent(user.email)}` ,{
+                headers: {
+                authorization: `Bearer ${accessToken}`
+                }
+            },
+)
             .then(res => res.json())
             .then(data => {
                 if (Array.isArray(data) && data.length > 0) {

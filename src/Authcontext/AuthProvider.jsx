@@ -59,7 +59,8 @@ const AuthProvider = ({ children }) => {
     };
 
     // User show the current user print here  
-    // console.log(user)
+    console.log(user)
+    
 
     return <AuthContext_File value={AuthData}>
         {children}
