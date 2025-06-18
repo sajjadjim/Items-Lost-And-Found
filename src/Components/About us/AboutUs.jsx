@@ -24,7 +24,7 @@ const AboutUs = () => {
     const feedbackUser = {name , email , feedback}
     // console.log(feedbackUser)
 
-    axios.post('http://localhost:3000/feedback', feedbackUser)
+    axios.post('https://b11a11-server-side-sajjadjim.vercel.app/feedback', feedbackUser)
       .then(res => {
       console.log('Feedback submitted:', res.data);
       })

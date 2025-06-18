@@ -6,7 +6,7 @@ const Data_Show_Home_Page = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3000/itemsAll")
+        fetch("https://b11a11-server-side-sajjadjim.vercel.app/itemsAll")
             .then(res => res.json())
             .then(data => {
                 // Sort by date descending (most recent first)

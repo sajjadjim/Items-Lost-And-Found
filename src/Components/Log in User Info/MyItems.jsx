@@ -22,7 +22,7 @@ const MyItems = ({ myPostedItemsPriomise }) => {
 
         if (result.isConfirmed) {
             try {
-                const res = await fetch(`http://localhost:3000/itemsAll/${id}`, {
+                const res = await fetch(`https://b11a11-server-side-sajjadjim.vercel.app/itemsAll/${id}`, {
                     method: "DELETE",
                 });
                 if (res.ok) {

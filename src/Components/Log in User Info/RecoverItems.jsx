@@ -5,7 +5,8 @@ import Recover_Single_Item from './Recover_Single_Item';
 // import { data } from 'react-router';
 import { FaTableList } from "react-icons/fa6";
 import { CiCreditCard1 } from "react-icons/ci";
-
+import Lottie from 'lottie-react';
+import noData from '../../../public/noData.json'
 
 const RecoverItems = () => {
     const { user } = use(AuthContext_File)
@@ -15,7 +16,7 @@ const RecoverItems = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:3000/recoverItems?email=${user.email}`)
+            fetch(`https://b11a11-server-side-sajjadjim.vercel.app/recoverItems?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => setItems(data))
                 .catch(err => console.error(err));
@@ -30,7 +31,7 @@ const RecoverItems = () => {
     useEffect(() => {
         setLoading(true);
         if (user?.email) {
-            fetch(`http://localhost:3000/recoverItems?email=${user.email}`, {
+            fetch(`https://b11a11-server-side-sajjadjim.vercel.app/recoverItems?email=${user.email}`, {
 
                 headers: {
                     authorization: `Bearer ${user.accessToken}`
@@ -77,16 +78,21 @@ const RecoverItems = () => {
                     className={`px-4 py-2 rounded flex cursor-pointer  items-center gap-1 ${viewMode === 'card' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
                     onClick={() => handleViewMode('card')}
                 >
-                    Card View <FaTableList></FaTableList>
+                    Card View <FaTableList />
                 </button>
                 <button
                     className={`px-4 py-2 rounded flex cursor-pointer items-center gap-1 ${viewMode === 'table' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
                     onClick={() => handleViewMode('table')}
                 >
-                    Table View <CiCreditCard1></CiCreditCard1>
+                    Table View <CiCreditCard1 />
                 </button>
             </div>
-            {viewMode === 'card' ? (
+            {items.length === 0 ? (
+                <div className="text-center   grid justify-center text-gray-500 my-10">
+                    No items recovered for this user.
+                     <Lottie className='w-100' animationData={noData} loop={true}></Lottie>
+                </div>
+            ) : viewMode === 'card' ? (
                 <div className='grid md:grid-cols-3 gap-5 grid-cols-1 justify-items-center'>
                     {items.map(item => (
                         <Recover_Single_Item item={item} key={item._id} />
