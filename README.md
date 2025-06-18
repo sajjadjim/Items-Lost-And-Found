@@ -1,12 +1,58 @@
-# React + Vite
+# b11a11-client-side-sajjadjim
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a client-side application built with React. Below you'll find setup instructions, installed packages, and development guidelines.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    cd b11a11-client-side-sajjadjim
+    ```
 
-## Expanding the ESLint configuration
+2. **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Main Packages Used
+
+- **react**: UI library for building user interfaces.
+- **react-dom**: DOM bindings for React.
+- **react-router-dom**: Routing for React applications.
+- **axios**: Promise-based HTTP client for API requests.
+- **tailwindcss**: Utility-first CSS framework for styling.
+- **daisyui**: Tailwind CSS component library.
+- **firebase**: For authentication and backend services.
+- **react-hook-form**: For managing forms and validation.
+- **@tanstack/react-query**: Data fetching and caching.
+- **sweetalert2**: For beautiful alert messages.
+
+> _Check `package.json` for the full list of dependencies._
+
+## Development
+
+- Run the app in development mode:
+  ```bash
+  npm start
+  ```
+- Build for production:
+  ```bash
+  npm run build
+  ```
+
+## Project Structure
+
+- `/src`: Source code
+- `/public`: Static files
+
+## Contribution
+
+1. Fork the repo
+2. Create a new branch
+3. Make your changes
+4. Submit a pull request
+
+---
+
+For any issues, please open an issue in the repository.
