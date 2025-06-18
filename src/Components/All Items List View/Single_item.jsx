@@ -33,7 +33,7 @@ const Single_item = ({ item }) => {
         data.title = title;
         data.thumbnail = thumbnail;
 
-        axios.post('https://b11a11-server-side-sajjadjim.vercel.app/recoverItems', data)
+        axios.post('http://localhost:3000/recoverItems', data)
             .then(res => {
                 if (res.data && res.data.insertedId) {
                     import('sweetalert2').then(Swal => {
@@ -70,7 +70,7 @@ const Single_item = ({ item }) => {
         e.preventDefault()
         const postType = e.target.recoveryStatus.value
         console.log("Post type here ", postType, _id)
-        fetch(`https://b11a11-server-side-sajjadjim.vercel.app/itemsAll/${item._id}`, {
+        fetch(`http://localhost:3000/itemsAll/${item._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

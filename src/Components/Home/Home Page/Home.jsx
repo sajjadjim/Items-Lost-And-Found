@@ -3,7 +3,8 @@ import { Typewriter } from 'react-simple-typewriter';
 import { Link } from 'react-router';
 import Carousel from './Components/Carousel';
 import Data_Show_Home_Page from './Components/Data_Show_Home_Page';
-import NumberofUserWebsite from './Components/NumberofUserWebsite';
+import StatsCounter from './Components/StatsCounter';
+
 
 const Home = () => {
     useEffect(() => {
@@ -51,7 +52,7 @@ const Home = () => {
             </div>
 
            <div>
-             <NumberofUserWebsite></NumberofUserWebsite>
+             <StatsCounter></StatsCounter>
            </div>
         </div>
     );

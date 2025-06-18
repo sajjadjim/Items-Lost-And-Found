@@ -55,12 +55,12 @@ const router = createBrowserRouter([
       },
       {
         path:'/updateItems/:id',
-        loader: ({ params }) => fetch(`https://b11a11-server-side-sajjadjim.vercel.app/itemsAll/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:3000/itemsAll/${params.id}`),
         element:<PrivateRoute><UpdateItems></UpdateItems></PrivateRoute>
       },
       {
         path:'/detailsItem/:id',
-        loader: ({ params }) => fetch(`https://b11a11-server-side-sajjadjim.vercel.app/itemsAll/${params.id}`), 
+        loader: ({ params }) => fetch(`http://localhost:3000/itemsAll/${params.id}`), 
         element:<PrivateRoute><DetailsItems></DetailsItems></PrivateRoute>
       },
       {

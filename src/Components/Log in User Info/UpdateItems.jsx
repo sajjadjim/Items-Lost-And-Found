@@ -27,7 +27,7 @@ const UpdateItems = () => {
         updateItem.email = user.email;
         // console.log(updateItem);
         //    Here the Data send to the Data Base Code 
-        axios.put(`https://b11a11-server-side-sajjadjim.vercel.app/itemsAll/${_id}`, updateItem)
+        axios.put(`http://localhost:3000/itemsAll/${_id}`, updateItem)
             .then((response) => {
                 if (response.data.insertedId) {
                     Swal.fire({

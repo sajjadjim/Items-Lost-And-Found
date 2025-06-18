@@ -5,23 +5,30 @@ import { FcGoogle } from "react-icons/fc";
 import registerLottie from '../../../public/login.json'
 import { ToastContainer, toast } from 'react-toastify';
 import { AuthContext_File } from '../../Authcontext/AuthProvider';
+import { useLocation } from 'react-router';
+import { useNavigate } from 'react-router';
 const Login = () => {
   useEffect(() => {
     document.title = 'Login|Page'
   })
 
   const { signIn, signInWithGoogle } = use(AuthContext_File)
+  const location = useLocation()
+  // console.log(location)
+  const navigate = useNavigate()
+
   // log in handle control frunction here
   const handleLogIn = (e) => {
     e.preventDefault()
     const email = e.target.email.value
     const password = e.target.password.value
     // console.log(email, password)
-    signIn(email, password).then(() => {
-
-    }).catch((error) => {
-      alert(error.message)
-    })
+    signIn(email, password)
+      .then(() => {
+        navigate(`${location.state ? location.state : '/'}`)
+      }).catch((error) => {
+        alert(error.message)
+      })
     toast("Successfully Log in Done ✅");
   }
   // --------------------------------------------------------
@@ -32,6 +39,7 @@ const Login = () => {
         // The signed-in user info.
         const user = result.user;
         console.log('Google User:', user);
+         navigate(`${location.state ? location.state : '/'}`)
         toast.success("Signed in with Google ✅");
       })
       .catch((error) => {

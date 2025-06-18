@@ -1,6 +1,6 @@
   export   const myPostedItemsPromise = (email , accessToken) => {
         {
-            return fetch(`https://b11a11-server-side-sajjadjim.vercel.app/itemsAll?email=${email}`,
+            return fetch(`http://localhost:3000/itemsAll?email=${email}`,
                 {
                     headers : {
                     authorization : `Bearer ${accessToken}`
