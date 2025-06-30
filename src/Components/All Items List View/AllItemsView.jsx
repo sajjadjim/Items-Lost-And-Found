@@ -40,7 +40,7 @@ const AllItemsView = () => {
 
     return (
         <div className='flex justify-center items-center flex-col'>
-            <div className="relative w-1/2 mb-6">
+            <div className="relative md:w-1/2 w-9/10 mb-6">
                 <input
                     type="text"
                     placeholder="Search by title or location"
@@ -52,6 +52,7 @@ const AllItemsView = () => {
                     <IoSearch size={20} />
                 </span>
             </div>
+            <p className='md:text-4xl text-2xl font-bold'>All Items</p>
             <div className="grid md:grid-cols-3 gap-4 p-4 grid-cols-1 w-10/12">
                 {
                     filteredItems.map(item => <Single_item item={item} key={item._id}></Single_item>)

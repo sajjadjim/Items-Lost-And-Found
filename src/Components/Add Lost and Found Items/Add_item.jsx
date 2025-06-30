@@ -75,29 +75,29 @@ const Add_item = () => {
 
         console.log(displayUserName)
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-pink-100 py-10">
-            <form onSubmit={handleAddNewItem} className="w-full max-w-4xl mx-auto p-8 bg-white/90 rounded-2xl shadow-2xl border border-blue-200 space-y-6 backdrop-blur">
+        <div className="min-h-screen flex items-center justify-center  py-10">
+            <form onSubmit={handleAddNewItem} className="w-full max-w-4xl mx-auto p-8 bg-white/70 rounded-2xl shadow-2xl border border-blue-200 space-y-6 backdrop-blur">
                 <h2 className="text-3xl font-bold text-center text-blue-700 mb-4 drop-shadow">Add Lost &amp; Found Item</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label className="block mb-1 font-semibold text-blue-700">Post Type</label>
-                        <select name="postType" className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+                        <select name="postType" className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 text-black" required>
                             <option value="Lost">Lost</option>
                             <option value="Found">Found</option>
                         </select>
                     </div>
                     <div>
                         <label className="block mb-1 font-semibold text-blue-700">Thumbnail (Image URL)</label>
-                        <input type="url" name="thumbnail" className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required placeholder="https://example.com/image.jpg" />
+                        <input type="url" name="thumbnail" className="w-full text-black border-2 border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required placeholder="https://example.com/image.jpg" />
                     </div>
                     <div>
                         <label className="block mb-1 font-semibold text-blue-700">Title</label>
-                        <input type="text" name="title" className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required placeholder="Item title" />
+                        <input type="text" name="title" className="w-full border-2 text-black border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required placeholder="Item title" />
                     </div>
                     <div>
                         <label className="block mb-1 font-semibold text-blue-700">Category</label>
-                        <select name="category" className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+                        <select name="category" className="w-full border-2 text-black border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required>
                             <option value="">Select Category</option>
                             <option value="pets">Pets</option>
                             <option value="documents">Documents</option>
@@ -107,27 +107,27 @@ const Add_item = () => {
                     </div>
                     <div className="md:col-span-2">
                         <label className="block mb-1 font-semibold text-blue-700">Description</label>
-                        <textarea name="description" className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" rows={3} required placeholder="Describe the item..." />
+                        <textarea name="description" className="w-full border-2 text-black border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" rows={3} required placeholder="Describe the item..." />
                     </div>
                     <div>
                         <label className="block mb-1 font-semibold text-blue-700">Location</label>
-                        <input type="text" name="location" className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required placeholder="Where was it lost/found?" />
+                        <input type="text" name="location" className="w-full border-2 text-black border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required placeholder="Where was it lost/found?" />
                     </div>
                     <div>
                         <label className="block mb-1 font-semibold text-blue-700">Date Lost or Found</label>
-                        <input type="date" name="date" className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required />
+                        <input type="date" name="date" className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 text-black focus:ring-blue-400" required />
                     </div>
                     <div>
                         <label className="block mb-1 font-semibold text-blue-700">Your Name</label>
-                        <input type="text" name="displayName" className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 bg-gray-100" defaultValue={displayUserName} readOnly  />
+                        <input type="text" name="displayName" className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 text-black" defaultValue={displayUserName} readOnly  />
                     </div>
                     <div>
                         <label className="block mb-1 font-semibold text-blue-700">Your Email</label>
-                        <input type="email" defaultValue={user.email} name="email" className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 bg-gray-100" readOnly />
+                        <input type="email" defaultValue={user.email} name="email" className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 text-black " readOnly />
                     </div>
                 </div>
 
-                <button type="submit" className="w-full bg-gradient-to-r from-blue-500 to-pink-400 text-white py-3 rounded-xl font-bold text-lg shadow-lg hover:from-blue-600 hover:to-pink-500 transition-all duration-200">
+                <button type="submit" className="w-full bg-blue-500 text-white py-3 rounded-xl font-bold text-lg shadow-lg hover:from-blue-600 hover:to-pink-500 transition-all duration-200">
                     Add Post
                 </button>
             </form>

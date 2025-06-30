@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import { Link } from 'react-router';
-import Carousel from './Components/Carousel';
 import Data_Show_Home_Page from './Components/Data_Show_Home_Page';
 import StatsCounter from './Components/StatsCounter';
 import AnimatedSection from './Components/AnimatedSection';
 import { motion } from 'framer-motion';
 import LostFoundFeatures from './Components/LostFoundFeatures';
 import AboutUs from '../../About us/AboutUs';
+import CarouselHome from './Components/CarouselHome';
 
 const Home = () => {
     useEffect(() => {
@@ -15,10 +15,10 @@ const Home = () => {
     }, []);
     return (
         <div className="w-full flex flex-col items-center ">
-            <div className="w-full max-w-6xl">
-                <Carousel />
+            <div className="md:w-9/13  mx-auto ">
+                <CarouselHome></CarouselHome>
             </div>
-            <motion.div className="hero bg-base-200 min-h-screen w-full flex justify-center"
+            <motion.div className="hero md:py-10 w-full flex justify-center"
             initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -31,7 +31,7 @@ const Home = () => {
                         alt="Work from home"
                     />
                     <div className="flex flex-col items-center text-center lg:items-start lg:text-left px-6">
-                        <h1 className="md:text-5xl text-3xl font-bold mb-4">
+                        <h1 className="md:text-5xl text-2xl font-bold mb-4">
                             Lost and Found Website{' '}
                             <span style={{ fontWeight: 'bold', marginTop: '50px', textAlign: 'center' }}>
                                 <span style={{ color: '#3B82F6' }}>
@@ -47,7 +47,7 @@ const Home = () => {
                                 </span>
                             </span>
                         </h1>
-                        <p className="py-6 max-w-xl ">
+                        <p className="md:py-6 max-w-xl ">
                             As a freelancer or entrepreneur, starting your business is like planting a seed. It takes plenty of time and money. Then you have to nurture it without knowing when the tree will finally take root and provide for you in return. It could be tough but when your gig starts to flourish, it makes all the hard work and dedication worth it.
                         </p>
                         <button className="btn  px-8 py-3 bg-blue-500 hover:text-blue-500 hover:border-2 hover:border-blue-500 hover:bg-white rounded-full shadow-lg">Get Started</button>

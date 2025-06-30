@@ -109,7 +109,7 @@ const Single_item = ({ item }) => {
 
     return (
         <div className="flex justify-center items-center py-6">
-            <div className="card bg-white w-96 shadow-xl rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+            <div className="card  w-96 shadow-xl rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
                 <figure className="relative">
                     <img
                         src={thumbnail}
@@ -123,8 +123,8 @@ const Single_item = ({ item }) => {
                             : postType === 'Lost'
                                 ? 'bg-red-500 text-white'
                                 : postType === 'recovered'
-                                    ? 'bg-gray-500 text-white opacity-60 cursor-not-allowed'
-                                    : 'bg-gray-400 text-white'
+                                    ? ' opacity-60 cursor-not-allowed'
+                                    : ''
                             }`}
                         style={postType === 'recovered' ? { pointerEvents: 'none', opacity: 0.6 } : {}}
                         title={postType === 'recovered' ? 'Already recovered' : ''}
@@ -134,8 +134,8 @@ const Single_item = ({ item }) => {
                 </figure>
                 <div className="card-body p-5">
                     <h2 className="card-title text-lg font-bold mb-2">{title || "Untitled"}</h2>
-                    <p className="text-gray-600 mb-3">{description}</p>
-                    <ul className="mb-4 text-sm text-gray-500 space-y-1">
+                    <p className=" mb-3">{description}</p>
+                    <ul className="mb-4 text-sm  space-y-1">
                         <li><span className="font-semibold">Category:</span> {category}</li>
                         <li><span className="font-semibold">Location:</span> {location}</li>
                         <li><span className="font-semibold">Date:</span> {date}</li>
@@ -147,7 +147,7 @@ const Single_item = ({ item }) => {
                     </div>
                 </div>
                 <div className='grid justify-items-center my-5'>
-                    <Link to={`/detailsItem/${_id}`} className='btn btn-secondary'>View Details</Link>
+                    <Link to={`/detailsItem/${_id}`} className='btn border-0 bg-blue-500'>View Details</Link>
                 </div>
             </div>
 
@@ -155,18 +155,18 @@ const Single_item = ({ item }) => {
             {isModalOpen && (
                 <div className="fixed inset-0 flex justify-center items-center z-50 backdrop-blur-sm bg-black/30">
                     <form
-                        className="bg-white/90 border border-gray-200 shadow-2xl rounded-2xl p-6 w-96 relative animate-fade-in-up"
+                        className=" border border-gray-200 shadow-2xl rounded-2xl p-6 w-96 relative animate-fade-in-up"
                         onSubmit={(e) => { handleRecoverItem(e); closeModal(); handdleAllItemsDatabase(e) }}
                     >
                         <button
                             type="button"
                             onClick={closeModal}
-                            className="absolute top-2 right-3 text-gray-600 hover:text-red-500 text-xl"
+                            className="absolute top-2 right-3  hover:text-red-500 text-xl"
                         >
                             &times;
                         </button>
-                        <h2 className="text-2xl font-bold mb-4 text-center text-gray-800">{postType} Item Info</h2>
-                        <div className="space-y-3 text-gray-700 text-sm">
+                        <h2 className="text-2xl font-bold mb-4 text-center ">{postType} Item Info</h2>
+                        <div className="space-y-3  text-sm">
                             <div>
                                 <label className="font-semibold block mb-1">Title</label>
                                 <input

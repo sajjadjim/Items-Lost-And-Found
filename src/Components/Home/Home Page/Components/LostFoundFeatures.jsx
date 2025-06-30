@@ -28,7 +28,7 @@ const LostFoundFeatures = () => {
     <section className=" py-16 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <motion.h2
-          className="text-4xl font-bold text-blue-500 mb-4"
+          className="md:text-4xl text-2xl font-bold text-blue-500 mb-4"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

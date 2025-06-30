@@ -51,14 +51,14 @@ const UpdateItems = () => {
         // form.reset();
     };
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-pink-100 py-10">
-            <form onSubmit={handleAddNewItem} className="w-full max-w-lg mx-auto p-8 bg-white/90 rounded-2xl shadow-2xl border border-blue-200 space-y-6 backdrop-blur">
+        <div className="min-h-screen flex items-center justify-center  py-10">
+            <form onSubmit={handleAddNewItem} className="w-full max-w-lg mx-auto p-8 bg-white/70 rounded-2xl shadow-2xl border border-blue-200 space-y-6 backdrop-blur">
                 <h2 className="text-3xl font-bold text-center text-blue-700 mb-4 drop-shadow">Update Items</h2>
                 <div>
                     <label className="block mb-1 font-semibold text-blue-700">Post Type</label>
                     <select
                         name="postType"
-                        className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
                         required
                         defaultValue={postType}
                     >
@@ -67,11 +67,11 @@ const UpdateItems = () => {
                     </select>
                 </div>
                 <div>
-                    <label className="block mb-1 font-semibold text-blue-700">Thumbnail (Image URL)</label>
+                    <label className="block mb-1 font-semibold  text-blue-700">Thumbnail (Image URL)</label>
                     <input
                         type="url"
                         name="thumbnail"
-                        className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="w-full border-2 text-black border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                         required
                         placeholder="https://example.com/image.jpg"
                         defaultValue={thumbnail}
@@ -82,7 +82,7 @@ const UpdateItems = () => {
                     <input
                         type="text"
                         name="title"
-                        className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="w-full border-2 text-black border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                         required
                         placeholder="Item title"
                         defaultValue={title}
@@ -92,7 +92,7 @@ const UpdateItems = () => {
                     <label className="block mb-1 font-semibold text-blue-700">Description</label>
                     <textarea
                         name="description"
-                        className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="w-full border-2 text-black border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                         rows={3}
                         required
                         placeholder="Describe the item..."
@@ -103,7 +103,7 @@ const UpdateItems = () => {
                     <label className="block mb-1 font-semibold text-blue-700">Category</label>
                     <select
                         name="category"
-                        className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="w-full border-2 text-black border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                         required
                         defaultValue={category}
                     >
@@ -119,7 +119,7 @@ const UpdateItems = () => {
                     <input
                         type="text"
                         name="location"
-                        className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="w-full border-2 text-black border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                         required
                         placeholder="Where was it lost/found?"
                         defaultValue={location}
@@ -130,7 +130,7 @@ const UpdateItems = () => {
                     <input
                         type="date"
                         name="date"
-                        className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="w-full border-2 text-black border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                         required
                         defaultValue={date}
                     />
@@ -140,7 +140,7 @@ const UpdateItems = () => {
                     <input
                         type="text"
                         name="displayName"
-                        className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 mb-2 bg-gray-100"
+                        className="w-full border-2 text-black border-blue-200 rounded-lg px-3 py-2 mb-2 bg-gray-100"
                         defaultValue={user.displayName}
                         readOnly
                     />
@@ -148,14 +148,14 @@ const UpdateItems = () => {
                         type="email"
                         defaultValue={user.email}
                         name="email"
-                        className="w-full border-2 border-blue-200 rounded-lg px-3 py-2 bg-gray-100"
+                        className="w-full border-2 text-black border-blue-200 rounded-lg px-3 py-2 bg-gray-100"
                         readOnly
                     />
                 </div>
-                <button type="submit" className="w-full bg-gradient-to-r from-blue-500 to-pink-400 text-white py-3 rounded-xl font-bold text-lg shadow-lg hover:from-blue-600 hover:to-pink-500 transition-all duration-200">
+                <button type="submit" className="w-full bg-blue-500 text-white py-3 rounded-xl font-bold text-lg shadow-lg hover:from-blue-600 hover:to-pink-500 transition-all duration-200">
                     Update Post
                 </button>
-                <div className='grid '><Link className='w-full bg-gradient-to-r from-blue-500 to-pink-400 text-white py-3 rounded-xl font-bold text-lg shadow-lg hover:from-blue-600 hover:to-pink-500 transition-all duration-200 text-center ' to={'/myItems'}>Back</Link></div>
+                <div className='grid '><Link className='w-full bg-blue-500 text-white py-3 rounded-xl font-bold text-lg shadow-lg hover:from-blue-600 hover:to-pink-500 transition-all duration-200 text-center ' to={'/myItems'}>Back</Link></div>
             </form>
         </div>
     );

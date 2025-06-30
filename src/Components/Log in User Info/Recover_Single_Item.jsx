@@ -8,8 +8,8 @@ const Recover_Single_Item = ({item}) => {
             <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white m-4">
                 <img className="w-full h-48 object-cover" src={thumbnail} alt={title || postType} />
                 <div className="px-6 py-4">
-                    <div className="font-bold text-xl mb-2">{title}</div>
-                    <div className="font-semibold text-lg mb-2">{postType} Item</div>
+                    <div className="font-bold text-black text-xl mb-2">{title}</div>
+                    <div className="font-semibold text-black text-lg mb-2">{postType} Item</div>
                     <p className="text-gray-700 text-base mb-2">
                         <span className="font-semibold">Category:</span> {category}
                     </p>

@@ -72,7 +72,7 @@ const User_info = () => {
 
     return (
         <div>
-            <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md max-w-sm mx-auto mt-20">
+            <div className="flex flex-col items-center md:py-20 p-5  rounded-lg shadow-xl max-w-sm mx-auto mt-20">
                 <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-blue-500 mb-4">
                     <img
                         src={photoURL}
@@ -81,8 +81,8 @@ const User_info = () => {
                     />
                 </div>
                 <h2 className="text-xl font-semibold mb-2">{displayName}</h2>
-                <p className="text-gray-600 mb-1">{email}</p>
-                <p className="text-gray-400 text-sm">ID: {uid}</p>
+                <p className=" mb-1">{email}</p>
+                <p className=" text-sm">ID: {uid}</p>
                 <button
                     className="mt-4 bg-blue-500 text-white rounded py-2 px-4 font-semibold hover:bg-blue-600"
                     onClick={() => setShowForm((prev) => !prev)}

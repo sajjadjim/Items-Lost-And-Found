@@ -45,7 +45,7 @@ const DetailsItems = () => {
                     </div>
                 </div>
                 <div className='grid justify-items-center my-10'>
-                    <Link to={'/postItems'} className='btn btn-primary'>Back</Link>
+                    <Link to={'/postItems'} className='btn btn-primary bg-blue-500'>Back</Link>
                 </div>
             </div>
         </div>

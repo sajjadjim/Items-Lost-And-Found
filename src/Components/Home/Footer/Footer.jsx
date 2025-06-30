@@ -12,7 +12,7 @@ const Footer = () => {
       <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
         <nav>
           <h6 className="footer-title">Services</h6>
-          <a className="link link-hover">Products</a>
+          {/* <a className="link link-hover">Products</a> */}
           <a className="link link-hover">Posting</a>
           <a className="link link-hover">Finding</a>
           <a className="link link-hover">Product Recover</a>
@@ -30,7 +30,7 @@ const Footer = () => {
           {/* <a className="link link-hover">Cookie policy</a> */}
         </nav>
       </footer>
-      <footer className="footer bg-base-200 text-base-content border-base-300 border-t px-10 py-4">
+      <footer className="footer bg-base-200 text-base-content border-base-300 border-t px-10 py-2">
         <aside className="grid-flow-col items-center">
       
           <p>

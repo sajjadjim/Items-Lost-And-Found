@@ -12,7 +12,7 @@ function PrivateRoute({ children }) {
     //  console.log(location)
 
     if (loading) {
-        return <div>Loading...</div>
+        return <div></div>
     }
     // console.log(user)
 

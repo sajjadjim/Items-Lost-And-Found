@@ -4,6 +4,11 @@ import Swal from 'sweetalert2';
 import Lottie from 'lottie-react';
 import registerLottie from '../../../public/register.json';
 import { AuthContext_File } from '../../Authcontext/AuthProvider';
+import { FcGoogle } from "react-icons/fc";
+import { Navigate } from 'react-router';
+import { toast } from 'react-toastify';
+import { useLocation } from 'react-router';
+import { useNavigate } from 'react-router';
 
 const SignUp = () => {
 
@@ -12,7 +17,11 @@ const SignUp = () => {
     document.title = 'Sign Up'
   })
 
-  const { createUser } = use(AuthContext_File)
+  const location = useLocation()
+  // console.log(location)
+  const navigate = useNavigate()
+
+  const { createUser, signInWithGoogle } = use(AuthContext_File)
 
   // users information send to the Database system 
   const handleAddNewUser = async (e) => {
@@ -30,7 +39,6 @@ const SignUp = () => {
       console.log(error)
     })
     // toast("Successfully Log in Done ✅");
-
 
     // Optional: Send taskData to your backend
     fetch('https://b11a11-server-side-sajjadjim.vercel.app/users', {
@@ -60,6 +68,48 @@ const SignUp = () => {
     const hasLowercase = /[a-z]/.test(password);
     const isLongEnough = password.length >= 8;
     return hasUppercase && hasLowercase && isLongEnough;
+  };
+
+  // sign in with google here part code ----------------------
+  const signInGoogle = () => {
+    signInWithGoogle()
+      .then((result) => {
+        // The signed-in user info.
+        const user = result.user;
+        console.log('Google User:', user);
+        toast.success("Successfully create account  with Google ✅");
+        fetch('https://b11a11-server-side-sajjadjim.vercel.app/users', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: user.displayName,
+            email: user.email,
+            photoUrl: user.photoURL
+          }),
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.insertedId) {
+              Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'New User Added successfully',
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            }
+          })
+
+        setTimeout(() => {
+          navigate(`${location.state ? location.state : '/'}`);
+        }, 2000);
+      })
+      .catch((error) => {
+        console.error('Google sign-in error:', error);
+        toast.error("Google Sign-in failed ❌");
+      });
   };
 
   return (
@@ -128,6 +178,16 @@ const SignUp = () => {
             Sign Up
           </button>
         </form>
+        <div className="mt-6 text-center">
+          <p className="text-sm text-gray-500 mb-2">create account with in google</p>
+          <button
+            onClick={signInGoogle}
+            className="w-full flex items-center justify-center space-x-2 text-black bg-white py-2 rounded-xl border border-gray-300 hover:shadow-md transition"
+          >
+            <FcGoogle />
+            <span>Sign in with Google</span>
+          </button>
+        </div>
         <p className="mt-4 text-center text-sm text-gray-600">
           Already have an account?{' '}
           <Link to="/login" className="text-blue-500 hover:underline">
@@ -135,6 +195,7 @@ const SignUp = () => {
           </Link>
         </p>
       </div>
+
       <div className="text-center lg:text-left">
         <Lottie className='w-50' animationData={registerLottie} loop={true}></Lottie>
       </div>
