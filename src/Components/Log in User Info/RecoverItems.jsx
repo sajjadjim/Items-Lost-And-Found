@@ -75,13 +75,13 @@ const RecoverItems = () => {
         <div>
             <div className="my-4 flex md:gap-20 gap-2   justify-center">
                 <button
-                    className={`px-4 py-2 rounded flex cursor-pointer  items-center gap-1 ${viewMode === 'card' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+                    className={`px-4 py-2 rounded flex cursor-pointer text-black  items-center gap-1 ${viewMode === 'card' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
                     onClick={() => handleViewMode('card')}
                 >
                     Card View <FaTableList />
                 </button>
                 <button
-                    className={`px-4 py-2 rounded flex cursor-pointer items-center gap-1 ${viewMode === 'table' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+                    className={`px-4 py-2 rounded flex cursor-pointer text-black items-center gap-1 ${viewMode === 'table' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
                     onClick={() => handleViewMode('table')}
                 >
                     Table View <CiCreditCard1 />

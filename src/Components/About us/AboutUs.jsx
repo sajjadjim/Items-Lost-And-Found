@@ -36,7 +36,7 @@ const AboutUs = () => {
 
   return (
     <motion.div
-      className="max-w-4xl mx-auto my-16 px-6 py-10 bg-white rounded-2xl shadow-md"
+      className="max-w-4xl mx-auto my-16 px-6 pb-5  rounded-2xl shadow-md"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
@@ -44,37 +44,37 @@ const AboutUs = () => {
     >
       {/* About Section */}
       <div className="mb-10">
-        <h2 className="text-4xl font-bold text-purple-700 mb-4">About Us</h2>
-        <p className="text-gray-700 text-lg">
+        <h2 className="text-4xl text-center font-bold text-blue-500 mb-4">About Us</h2>
+        <p className=" text-lg">
           Welcome to our Lost & Found platform — a place where users can report lost items or post items they’ve found to help others. We aim to build a trustworthy and helpful digital space where people can reconnect with their belongings and show kindness by returning what’s not theirs.
         </p>
       </div>
 
       {/* Feedback Form */}
       <div>
-        <h3 className="text-2xl font-semibold text-gray-800 mb-4">Share Your Feedback</h3>
-        <p className="text-gray-600 mb-6">
+        <h3 className="text-2xl font-semibold  mb-4">Share Your Feedback</h3>
+        <p className=" mb-6">
           Tell us about your experience using the site or suggest features you'd like to see in future updates.
         </p>
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col md:flex-row gap-4 mb-4">
             <input
               type="text"
-              className="flex-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 text-gray-700"
+              className="flex-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2  "
               placeholder="Your name (optional)"
               name="name"
               autoComplete="off"
             />
             <input
               type="email"
-              className="flex-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 text-gray-700"
+              className="flex-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2  "
               placeholder="Your email (optional)"
               name="email"
               autoComplete="off"
             />
           </div>
           <textarea
-            className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 text-gray-700"
+            className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2  "
             rows="5"
             placeholder="Your feedback here..."
             name="feedback"
@@ -83,7 +83,7 @@ const AboutUs = () => {
           ></textarea>
           <button
             type="submit"
-            className="mt-4 px-6 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition"
+            className="mt-4 px-6 py-3 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-400 transition"
           >
             Submit Feedback
           </button>

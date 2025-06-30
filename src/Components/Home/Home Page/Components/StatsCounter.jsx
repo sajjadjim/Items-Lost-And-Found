@@ -37,11 +37,12 @@ const StatsCounter = () => {
       {stats.map((stat, index) => (
         <div
           key={index}
-          className="w-60 h-32 flex flex-col justify-center items-center rounded-xl shadow-md bg-gray-50 transition-opacity duration-1000"
+          className="w-60 h-32 flex flex-col justify-center items-center rounded-xl shadow-xl transition duration-300 relative group bg-white overflow-hidden"
         >
-          <div className="text-3xl mb-2">{stat.icon}</div>
-          <div className="text-2xl font-bold text-blue-600">{counts[index]}+</div>
-          <div className="text-sm text-gray-700">{stat.label}</div>
+          <span className="absolute inset-0 bg-blue-100 opacity-0 group-hover:opacity-60 transition-opacity duration-300 pointer-events-none"></span>
+          <div className="text-3xl mb-2 z-10 group-hover:scale-110 transition-transform duration-300">{stat.icon}</div>
+          <div className="text-2xl font-bold text-blue-600 z-10 group-hover:text-blue-800 transition-colors duration-300">{counts[index]}+</div>
+          <div className="text-sm text-gray-700 z-10 group-hover:text-black transition-colors duration-300">{stat.label}</div>
         </div>
       ))}
     </div>

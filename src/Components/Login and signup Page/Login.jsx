@@ -25,8 +25,11 @@ const Login = () => {
     // console.log(email, password)
     signIn(email, password)
       .then(() => {
-        navigate(`${location.state ? location.state : '/'}`)
-        toast("Successfully Log in Done ✅");
+        toast.success("Successfully Log in Done ✅");
+        // 
+        setTimeout(() => {
+          navigate(`${location.state ? location.state : '/'}`)
+        }, 1000)
       }).catch((error) => {
         // alert(error.message)
         const errorCode = error.code
@@ -43,8 +46,10 @@ const Login = () => {
         // The signed-in user info.
         const user = result.user;
         console.log('Google User:', user);
-        navigate(`${location.state ? location.state : '/'}`)
         toast.success("Signed in with Google ✅");
+        setTimeout(() => {
+          navigate(`${location.state ? location.state : '/'}`)
+        }, 1000)
       })
       .catch((error) => {
         console.error('Google sign-in error:', error);

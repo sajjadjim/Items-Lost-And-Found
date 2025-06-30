@@ -21,6 +21,7 @@ const Navbar = () => {
     // Filter Data From the Database From  userDatabase Information  Show the name
     useEffect(() => {
         const accessToken = user?.accessToken;
+        // console.log(accessToken)
         if (accessToken) {
             fetch('https://b11a11-server-side-sajjadjim.vercel.app/users',
                 {
@@ -38,12 +39,13 @@ const Navbar = () => {
                     console.error('Error fetching users:', error);
                 });
         }
-    }, []);
+    }, [user]);
 
-    
+    // console.log(dbUser)
+
     const currentUser = dbUser.filter(db => db.email === user?.email)
     // const displayName =  dbUser.name 
-    // console.log(dbUser)
+    // console.log(currentUser[0]?.photoUrl)
 
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -56,20 +58,32 @@ const Navbar = () => {
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-3">
                         <NavLink to='/'><li>Home</li></NavLink>
-                        <NavLink to='/addItems'><li>Add Lost & Found</li></NavLink>
-                        <NavLink to='/postItems'><li>Post items</li></NavLink>
+                        {
+                            user && (
+                                <>
+                                    <NavLink to='/addItems'><li>Add Lost & Found</li></NavLink>
+                                    <NavLink to='/postItems'><li>Post items</li></NavLink>
+                                </>
+                            )
+                        }
                         <NavLink to='/FaQ'> <li>FaQ</li></NavLink>
                         <NavLink to='/aboutUs'> <li>About Us</li></NavLink>
                         <NavLink to='/contact'><li>Contact</li></NavLink>
                     </ul>
                 </div>
-                <a className="font-semibold text-lg flex  items-center gap-1"><SiTemporal className='text-green-500 md:h-8 md:w-8' />Lost and Found Website</a>
+                <a className="font-semibold md:text-lg flex  items-center gap-1"><SiTemporal className='text-green-500 md:h-8 md:w-8' />Lost and Found</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-5">
                     <NavLink to='/'><li>Home</li></NavLink>
-                    <NavLink to='/addItems'><li>Add Lost & Found</li></NavLink>
-                    <NavLink to='/postItems'><li>Post items</li></NavLink>
+                    {
+                        user && (
+                            <>
+                                <NavLink to='/addItems'><li>Add Lost & Found</li></NavLink>
+                                <NavLink to='/postItems'><li>Post items</li></NavLink>
+                            </>
+                        )
+                    }
                     <NavLink to='/FaQ'> <li>FaQ</li></NavLink>
                     <NavLink to='/aboutUs'> <li>About Us</li></NavLink>
                     <NavLink to='/contact'><li>Contact</li></NavLink>
@@ -83,11 +97,14 @@ const Navbar = () => {
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                                 <Link tabIndex={0} role="button" to='/'>
-                                    {user && user.photoURL ? (
-                                        <img className='rounded-full h-8 w-8 mx-1 cursor-pointer' src={user.photoURL} alt="User" />
+                                    {/* {user && user.photoURL ? (
+                                        <img className='rounded-full h-8 w-8 mx-1 cursor-pointer' src={currentUser[0]?.photoUrl} alt="User" />
                                     ) : (
                                         <FaUserCircle className='h-8 w-8 mx-1 cursor-pointer' />
-                                    )}
+                                    )} */}
+                                    {
+                                        <img className='rounded-full h-8 w-8 mx-1 cursor-pointer' src={currentUser[0]?.photoUrl} alt="User" />
+                                    }
                                 </Link>
                             </div>
                         </div>
@@ -105,7 +122,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     {/* Tooltip */}
-                    <div className="absolute -left-4/5 -translate-x-1/2 mt-2 w-max px-3 py-2 rounded bg-gray-800 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                    <div className="absolute -left-4/5 -translate-x-1/2 mt-2 w-max px-3 py-2 rounded   text-xs opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
                         {user ? (
                             <div>
                                 <div>

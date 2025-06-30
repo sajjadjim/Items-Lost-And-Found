@@ -18,6 +18,8 @@ import RecoverItems from "../Components/Log in User Info/RecoverItems";
 import ContactPage from "../Components/Contact/ContactPage";
 import FaQ from "../Components/SomeFrequentyQuestion/FaQ";
 import AboutUs from "../Components/About us/AboutUs";
+import TermOfUser from "../Components/Home/Footer/Footer Link/TermOfUser";
+import PrivacyPolicy from "../Components/Home/Footer/Footer Link/PrivacyPolicy";
 
 const router = createBrowserRouter([
   {
@@ -81,6 +83,15 @@ const router = createBrowserRouter([
       {
         path:'/aboutUs',
         Component: AboutUs
+      },
+      {
+        path:'/termOfUse'
+        ,
+        Component:TermOfUser
+      },
+      {
+        path:'/privacyPolicy',
+        Component:PrivacyPolicy
       }
     ]
   },
