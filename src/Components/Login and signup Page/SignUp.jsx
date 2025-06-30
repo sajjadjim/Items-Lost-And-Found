@@ -63,9 +63,9 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen md:flex items-center justify-center bg-gray-100 px-4 gap-10">
-      <div className="max-w-md w-full bg-white p-8 rounded-2xl shadow-md">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Create an Account</h2>
+    <div className="min-h-screen md:flex items-center justify-center  px-4 gap-10">
+      <div className="max-w-md w-full  p-8 rounded-2xl border-white border shadow-md">
+        <h2 className="text-3xl font-bold text-center  mb-6">Create an Account</h2>
         <form
           onSubmit={e => {
             const password = e.target.password.value;
@@ -83,7 +83,7 @@ const SignUp = () => {
           className="space-y-4"
         >
           <div>
-            <label className="block text-gray-600 text-sm mb-1">Full Name</label>
+            <label className="block  text-sm mb-1">Full Name</label>
             <input
               name="name"
               type="text"
@@ -93,7 +93,7 @@ const SignUp = () => {
             />
           </div>
           <div>
-            <label className="block text-gray-600 text-sm mb-1">Photo URL</label>
+            <label className="block  text-sm mb-1">Photo URL</label>
             <input
               name="photoUrl"
               type="url"
@@ -102,7 +102,7 @@ const SignUp = () => {
               required />
           </div>
           <div>
-            <label className="block text-gray-600 text-sm mb-1">Email</label>
+            <label className="block  text-sm mb-1">Email</label>
             <input
               name="email"
               type="email"
@@ -112,7 +112,7 @@ const SignUp = () => {
             />
           </div>
           <div>
-            <label className="block text-gray-600 text-sm mb-1">Password</label>
+            <label className="block  text-sm mb-1">Password</label>
             <input
               name="password"
               type="password"

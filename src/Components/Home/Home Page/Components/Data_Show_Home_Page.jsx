@@ -30,16 +30,16 @@ const Data_Show_Home_Page = () => {
                 {[...items].reverse().map((item) => (
                     <div
                         key={item._id}
-                        className="bg-white rounded-lg shadow p-4 flex flex-col items-center border border-gray-200"
+                        className=" rounded-lg shadow p-4 flex flex-col items-center border border-gray-200"
                     >
                         <img
                             src={item.thumbnail}
                             alt={item.title}
                             className="w-full h-44 object-cover rounded mb-3"
                         />
-                        <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
+                        <h3 className="text-lg font-semibold  mb-1">{item.title}</h3>
                         <p className="text-sm mb-1">
-                            <span className="font-medium">Type:</span> {item.postType}
+                            <span className="font-medium ">Type:</span> {item.postType}
                         </p>
                         {/* <p className="text-sm mb-1">
                             <span className="font-medium">Category:</span> {item.category}
@@ -55,7 +55,7 @@ const Data_Show_Home_Page = () => {
                     </div>
                 ))}
             </motion.div>
-            <div className='grid  justify-items-center'> <Link className='btn btn-primary my-5' to={'/postItems'}>Show more</Link></div>
+            <div className='grid  justify-items-center'> <Link className='btn btn-primary bg-blue-500 my-5' to={'/postItems'}>Show more</Link></div>
         </div>
     );
 };

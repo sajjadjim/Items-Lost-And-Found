@@ -56,20 +56,32 @@ const Navbar = () => {
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-3">
                         <NavLink to='/'><li>Home</li></NavLink>
-                        <NavLink to='/addItems'><li>Add Lost & Found</li></NavLink>
-                        <NavLink to='/postItems'><li>Post items</li></NavLink>
+                        {
+                        user && (
+                            <>
+                                <NavLink to='/addItems'><li>Add Lost & Found</li></NavLink>
+                                <NavLink to='/postItems'><li>Post items</li></NavLink>
+                            </>
+                        )
+                    }
                         <NavLink to='/FaQ'> <li>FaQ</li></NavLink>
                         <NavLink to='/aboutUs'> <li>About Us</li></NavLink>
                         <NavLink to='/contact'><li>Contact</li></NavLink>
                     </ul>
                 </div>
-                <a className="font-semibold text-lg flex  items-center gap-1"><SiTemporal className='text-green-500 md:h-8 md:w-8' />Lost and Found Website</a>
+                <a className="font-semibold md:text-lg flex  items-center gap-1"><SiTemporal className='text-green-500 md:h-8 md:w-8' />Lost and Found</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-5">
                     <NavLink to='/'><li>Home</li></NavLink>
-                    <NavLink to='/addItems'><li>Add Lost & Found</li></NavLink>
-                    <NavLink to='/postItems'><li>Post items</li></NavLink>
+                    {
+                        user && (
+                            <>
+                                <NavLink to='/addItems'><li>Add Lost & Found</li></NavLink>
+                                <NavLink to='/postItems'><li>Post items</li></NavLink>
+                            </>
+                        )
+                    }
                     <NavLink to='/FaQ'> <li>FaQ</li></NavLink>
                     <NavLink to='/aboutUs'> <li>About Us</li></NavLink>
                     <NavLink to='/contact'><li>Contact</li></NavLink>
@@ -105,7 +117,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     {/* Tooltip */}
-                    <div className="absolute -left-4/5 -translate-x-1/2 mt-2 w-max px-3 py-2 rounded bg-gray-800 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                    <div className="absolute -left-4/5 -translate-x-1/2 mt-2 w-max px-3 py-2 rounded   text-xs opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
                         {user ? (
                             <div>
                                 <div>

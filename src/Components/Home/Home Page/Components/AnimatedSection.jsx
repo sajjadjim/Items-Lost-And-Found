@@ -10,7 +10,7 @@ const AnimatedSection = () => {
       transition={{ duration: 0.8, ease: 'easeOut' }}
       viewport={{ once: true }}
     >
-      <h2 className="text-4xl font-bold text-purple-700 mb-4 text-center">
+      <h2 className="text-4xl font-bold text-blue-500 mb-4 text-center">
         Welcome to Lost & Found Hub
       </h2>
       <p className="text-gray-600 text-lg text-center">
@@ -21,7 +21,7 @@ const AnimatedSection = () => {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="px-6 py-3 rounded-full bg-purple-600 text-white font-semibold shadow-md hover:bg-purple-700 transition"
+          className="px-6 py-3 rounded-full bg-white  text-blue-500 border-2 border-blue-500 font-semibold shadow-md  transition"
         >
           Post Lost Item
         </motion.button>

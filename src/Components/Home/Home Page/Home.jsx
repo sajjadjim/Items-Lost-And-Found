@@ -14,7 +14,7 @@ const Home = () => {
         document.title = 'Home | Page';
     }, []);
     return (
-        <div className="w-full flex flex-col items-center bg-gradient-to-b from-blue-50 to-white">
+        <div className="w-full flex flex-col items-center ">
             <div className="w-full max-w-6xl">
                 <Carousel />
             </div>
@@ -34,7 +34,7 @@ const Home = () => {
                         <h1 className="md:text-5xl text-3xl font-bold mb-4">
                             Lost and Found Website{' '}
                             <span style={{ fontWeight: 'bold', marginTop: '50px', textAlign: 'center' }}>
-                                <span style={{ color: 'blue' }}>
+                                <span style={{ color: '#3B82F6' }}>
                                     <Typewriter
                                         words={['Add Items', 'Views Items', 'Update Items', 'Find / Help Others']}
                                         loop={0}
@@ -47,10 +47,10 @@ const Home = () => {
                                 </span>
                             </span>
                         </h1>
-                        <p className="py-6 max-w-xl text-gray-600">
+                        <p className="py-6 max-w-xl ">
                             As a freelancer or entrepreneur, starting your business is like planting a seed. It takes plenty of time and money. Then you have to nurture it without knowing when the tree will finally take root and provide for you in return. It could be tough but when your gig starts to flourish, it makes all the hard work and dedication worth it.
                         </p>
-                        <button className="btn btn-primary px-8 py-3 rounded-full shadow-lg">Get Started</button>
+                        <button className="btn  px-8 py-3 bg-blue-500 hover:text-blue-500 hover:border-2 hover:border-blue-500 hover:bg-white rounded-full shadow-lg">Get Started</button>
                     </div>
                 </div>
             </motion.div>

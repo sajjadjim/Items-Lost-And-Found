@@ -25,10 +25,10 @@ const features = [
 
 const LostFoundFeatures = () => {
   return (
-    <section className="bg-gradient-to-br from-purple-50 to-blue-100 py-16 px-6">
+    <section className=" py-16 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <motion.h2
-          className="text-4xl font-bold text-purple-700 mb-4"
+          className="text-4xl font-bold text-blue-500 mb-4"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -36,7 +36,7 @@ const LostFoundFeatures = () => {
         >
           How Our Platform Helps You
         </motion.h2>
-        <p className="text-gray-600 mb-12 text-lg">
+        <p className=" mb-12 text-lg">
           Discover how we make it easy to reconnect people with lost belongings.
         </p>
 
