@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import LostFoundFeatures from './Components/LostFoundFeatures';
 import AboutUs from '../../About us/AboutUs';
 import CarouselHome from './Components/CarouselHome';
+import ViewInforUsers from './Components/ViewInforUsers';
 
 const Home = () => {
     useEffect(() => {
@@ -68,7 +69,9 @@ const Home = () => {
            <div>
             <LostFoundFeatures></LostFoundFeatures>
            </div>
-           
+           <div>
+            <ViewInforUsers></ViewInforUsers>
+           </div>
         </div>
     );
 };
