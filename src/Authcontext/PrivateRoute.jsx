@@ -13,7 +13,11 @@ function PrivateRoute({ children }) {
         return <div></div>
     }
 
-
+// if there is no user then return a loading page
+    if (!user) {
+        return <Navigate state={location.pathname} to='/login'>
+        </Navigate>
+    }   
     if (user && user.email) {
         return children
     }
