@@ -35,6 +35,15 @@ const FaQ = () => {
             Go to "My Account" settings and select "Edit Profile" to make changes.
           </div>
         </div>
+         <div className="collapse collapse-arrow bg-base-100 border border-base-300 rounded-lg">
+          <input type="radio" name="faq-accordion" />
+          <div className="collapse-title font-semibold text-lg">
+            How do I update my profile information?
+          </div>
+          <div className="collapse-content text-sm ">
+            Go to "My Account" settings and select "Edit Profile" to make changes.
+          </div>
+        </div>
 
         {/* Lost & Found Specific Questions */}
         <div className="collapse collapse-arrow bg-base-100 border border-base-300 rounded-lg">
@@ -84,6 +93,17 @@ const FaQ = () => {
           </div>
           <div className="collapse-content text-sm ">
             We use secure authentication and do not share your personal data with third parties. Your posts only display limited info.
+          </div>
+        </div>
+
+        {/* New Question */}
+        <div className="collapse collapse-arrow bg-base-100 border border-base-300 rounded-lg">
+          <input type="radio" name="faq-accordion" />
+          <div className="collapse-title font-semibold text-lg">
+            What should I do if I find my lost item listed?
+          </div>
+          <div className="collapse-content text-sm ">
+            Contact the person who posted the item using the provided contact options and provide proof of ownership if required.
           </div>
         </div>
       </div>
