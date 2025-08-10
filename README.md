@@ -1,4 +1,4 @@
-# b11a11-client-side-sajjadjim
+# side-sajjadjim
 
 This project is a client-side application built with React. Below you'll find setup instructions, installed packages, and development guidelines.
 
@@ -54,5 +54,19 @@ This project is a client-side application built with React. Below you'll find se
 4. Submit a pull request
 
 ---
+## Environment Variables
+
+Create a `.env` file in the root directory and add the required environment variables. Example:
+
+```env
+REACT_APP_API_URL=<your-api-url>
+REACT_APP_FIREBASE_API_KEY=<your-firebase-api-key>
+```
+
+Refer to the documentation or `src/config` for all required variables.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 For any issues, please open an issue in the repository.
