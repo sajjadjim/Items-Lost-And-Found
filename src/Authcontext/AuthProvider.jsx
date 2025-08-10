@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut, signInWithEmailAndPassword } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react'
 import app from '../Firebase/Firebase.init';
-// Create here a AuthContext for all file can acess it and use That
+// Create here a AuthContext for all file can access it and use That
 export const AuthContext_File = createContext()
 
 // auth import from app 
