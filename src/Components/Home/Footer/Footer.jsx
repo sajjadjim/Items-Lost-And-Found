@@ -28,6 +28,7 @@ const Footer = () => {
           <h6 className="footer-title">Legal</h6>
           <Link to='/termOfUse' className="link link-hover">Terms of use</Link>
           <Link to='/privacyPolicy' className="link link-hover">Privacy policy</Link>
+      
           {/* <a className="link link-hover">Cookie policy</a> */}
         </nav>
       </footer>
