@@ -70,7 +70,7 @@ const router = createBrowserRouter([
         element:<PrivateRoute><DetailsItems></DetailsItems></PrivateRoute>
       },
       {
-        path:'/recoverIems',
+        path:'/recoverItems',
         element:<PrivateRoute><RecoverItems></RecoverItems></PrivateRoute>
       },
       {
