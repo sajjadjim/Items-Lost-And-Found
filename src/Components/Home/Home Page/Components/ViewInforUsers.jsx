@@ -12,14 +12,14 @@ const ViewInforUsers = () => {
 
     return (
         <div>
-            <h2>User Information</h2>
+            {/* <h2>User Information</h2>
             <ul>
                 <li><strong>Name:</strong> {user.name}</li>
                 <li><strong>Email:</strong> {user.email}</li>
                 <li><strong>Phone:</strong> {user.phone}</li>
                 <li><strong>Address:</strong> {user.address}</li>
                 <li><strong>Joined:</strong> {user.joined}</li>
-            </ul>
+            </ul> */}
         </div>
     );
 };

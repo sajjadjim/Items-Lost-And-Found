@@ -19,7 +19,7 @@ import ContactPage from "../Components/Contact/ContactPage";
 import FaQ from "../Components/SomeFrequentyQuestion/FaQ";
 import AboutUs from "../Components/About us/AboutUs";
 import TermOfUser from "../Components/Home/Footer/Footer Link/TermOfUser";
-import PrivacyPolicy from "../Components/Home/Footer/Footer Link/PrivacyPolicy";
+// import PrivacyPolicy from "../Components/Home/Footer/Footer Link/PrivacyPolicy";
 import Terms_of_user from "../Components/Home/Footer/Footer Link/Terms_of_user";
 
 const router = createBrowserRouter([
@@ -90,10 +90,10 @@ const router = createBrowserRouter([
         ,
         Component:TermOfUser
       },
-      {
-        path:'/privacyPolicy',
-        Component:PrivacyPolicy
-      },
+      // {
+      //   path:'/privacyPolicy',
+      //   Component:PrivacyPolicy
+      // },
       {
         path:'/termOfUse',
         Component: Terms_of_user

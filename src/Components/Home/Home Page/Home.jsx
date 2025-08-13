@@ -9,6 +9,7 @@ import LostFoundFeatures from './Components/LostFoundFeatures';
 import AboutUs from '../../About us/AboutUs';
 import CarouselHome from './Components/CarouselHome';
 import ViewInforUsers from './Components/ViewInforUsers';
+import HomeSections from './Components/Homesections';
 
 const Home = () => {
     useEffect(() => {
@@ -71,6 +72,9 @@ const Home = () => {
            </div>
            <div>
             <ViewInforUsers></ViewInforUsers>
+           </div>
+           <div>
+            <HomeSections></HomeSections>
            </div>
         </div>
     );

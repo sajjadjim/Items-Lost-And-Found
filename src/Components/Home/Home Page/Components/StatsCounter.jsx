@@ -33,11 +33,11 @@ const StatsCounter = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center gap-6 flex-wrap p-8">
+    <div className="flex justify-center max-w-6xl mx-auto items-center gap-6 flex-wrap py-8">
       {stats.map((stat, index) => (
         <div
           key={index}
-          className="w-60 h-32 flex flex-col justify-center items-center rounded-xl shadow-xl transition duration-300 relative group bg-white overflow-hidden"
+          className="w-63 h-32 flex flex-col justify-center items-center rounded-xl shadow-xl transition duration-300 relative group bg-white overflow-hidden"
         >
           <span className="absolute inset-0 bg-blue-100 opacity-0 group-hover:opacity-60 transition-opacity duration-300 pointer-events-none"></span>
           <div className="text-3xl mb-2 z-10 group-hover:scale-110 transition-transform duration-300">{stat.icon}</div>
